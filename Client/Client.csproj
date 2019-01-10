@@ -2,15 +2,85 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\app\core\core.module.ts" />
+    <None Remove="src\app\core\footer\footer.component.ts" />
+    <None Remove="src\app\core\header\header.component.ts" />
+    <None Remove="src\app\modules\archive\archive-routing.module.ts" />
+    <None Remove="src\app\modules\archive\archive.module.ts" />
+    <None Remove="src\app\modules\article\article-routing.module.ts" />
+    <None Remove="src\app\modules\article\article.module.ts" />
+    <None Remove="src\app\modules\article\components\article-info\article-info.component.ts" />
+    <None Remove="src\app\modules\article\components\article-info\article-info.spec.ts" />
+    <None Remove="src\app\modules\article\components\article-preview\article-preview.component.ts" />
+    <None Remove="src\app\modules\article\components\article-preview\article-preview.spec.ts" />
+    <None Remove="src\app\modules\editor\components\editor-selection\editor-selection.component.ts" />
+    <None Remove="src\app\modules\editor\components\editor-selection\editor-selection.spec.ts" />
+    <None Remove="src\app\modules\editor\components\editor\editor.component.ts" />
+    <None Remove="src\app\modules\editor\components\editor\editor.spec.ts" />
+    <None Remove="src\app\modules\editor\editor.module.ts" />
+    <None Remove="src\app\modules\feed\components\feed-list\feed-list.component.ts" />
+    <None Remove="src\app\modules\feed\components\feed-list\feed-list.spec.ts" />
+    <None Remove="src\app\modules\feed\feed-routing.module.ts" />
+    <None Remove="src\app\modules\feed\feed.module.ts" />
+    <None Remove="src\app\shared\components\button-selection\button-selection.component.ts" />
+    <None Remove="src\app\shared\components\button-selection\button-selection.spec.ts" />
+    <None Remove="src\app\shared\services\article-provider.service.ts" />
+    <None Remove="src\app\shared\services\article.service.ts" />
+    <None Remove="src\app\core\services\backend\backend.service.ts" />
+    <None Remove="src\app\shared\shared.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\app\core\authentication\" />
+    <Folder Include="src\app\core\guards\" />
+    <Folder Include="src\app\modules\editor\pages\" />
+    <Folder Include="src\app\shared\directives\" />
+    <Folder Include="src\app\shared\pipes\" />
+    <Folder Include="src\app\shared\services\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\core\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\core\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\archive\archive-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\archive\archive.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\components\article-info\article-info.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\components\article-info\article-info.spec.ts" />
+    <TypeScriptCompile Include="src\app\modules\archive\components\archive-list\archive-list.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\archive\components\archive-list\archive-list.spec.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\article-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\article.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\components\article-preview\article-preview.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\article\components\article-preview\article-preview.spec.ts" />
+    <TypeScriptCompile Include="src\app\modules\editor\components\editor-selection\editor-selection.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\editor\components\editor-selection\editor-selection.spec.ts" />
+    <TypeScriptCompile Include="src\app\modules\editor\components\editor\editor.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\editor\components\editor\editor.spec.ts" />
+    <TypeScriptCompile Include="src\app\modules\editor\editor.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\feed\feed-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\feed\feed.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\feed\components\feed-list\feed-list.component.ts" />
+    <TypeScriptCompile Include="src\app\modules\feed\components\feed-list\feed-list.spec.ts" />
+    <TypeScriptCompile Include="src\app\core\services\article\article-provider.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\article\article-model.service.ts" />
+    <TypeScriptCompile Include="src\app\core\services\backend\backend.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\button-selection\button-selection.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\components\button-selection\button-selection.spec.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
   </ItemGroup>
 
 </Project>

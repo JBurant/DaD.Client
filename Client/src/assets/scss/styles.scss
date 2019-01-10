@@ -1,0 +1,36 @@
+body
+{
+	font-family : Tahoma, Geneva, sans-serif;
+	color : white;
+	overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.LogoTextArea {
+  font-weight: bold;
+  opacity: 0;
+}
+
+.UpperBar
+{
+	font-weight : bold;
+	padding : 10pt;
+	background-color : #000066;
+}
+
+.MenuButton
+{
+	box-shadow: 0pt 2pt #AAAAAA;
+	font-weight : bold;
+	border : none;
+	color : white;
+	padding : 10pt;
+	background-color : #000099;
+	border-radius: 0pt 0pt 10pt 10pt;
+	transition-duration : 0.6s;
+}
+
+.MenuButton:hover {
+  background-color: #666666;
+  color: white;
+}
