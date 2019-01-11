@@ -1,5 +1,7 @@
+@import "~src/assets/scss/global-variables";
+
 .editor
 {
-  background-color: #000066;
-  padding: 10pt;
+  background-color: $sub-dominant-color;
+  padding: 20pt;
 }

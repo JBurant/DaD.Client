@@ -1,5 +1,7 @@
+@import "~src/assets/scss/global-variables";
+
 .articleContent {
-  background-color: #000099;
+  background-color: $sub-dominant-color;
   font-size: 10pt;
-  padding: 20pt;
+  padding: 20pt; 
 }

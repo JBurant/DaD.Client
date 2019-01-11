@@ -81,7 +81,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <nav class=\"UpperBar\">\r\n    <label>\r\n      Logo\r\n    </label>\r\n    <label>\r\n      Lonely Fort\r\n    </label>\r\n  </nav>\r\n\r\n  <nav>\r\n    <button class=\"MenuButton\" [routerLink] = \"feed-list\">Feed</button>\r\n    <!--\r\n    -->\r\n    <button class=\"MenuButton\" routerLink = \"editor\">New Article</button>\r\n    <!--\r\n    -->\r\n    <button class=\"MenuButton\" routerLink = \"archive\">Archive</button>\r\n  </nav>a\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div>\r\n  <nav class=\"UpperBar\">\r\n    <label>\r\n      Logo\r\n    </label>\r\n    <label>\r\n      Lonely Fort\r\n    </label>\r\n  </nav>\r\n\r\n  <nav>\r\n    <button class=\"MenuButton\" routerLink= \"feed-list\">Feed</button>\r\n    <!--\r\n    -->\r\n    <button class=\"MenuButton\" routerLink = \"editor\">New Article</button>\r\n    <!--\r\n    -->\r\n    <button class=\"MenuButton\" routerLink = \"archive\">Archive</button>\r\n  </nav>a\r\n</div>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 

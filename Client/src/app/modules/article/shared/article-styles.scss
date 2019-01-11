@@ -1,11 +1,13 @@
+@import "~src/assets/scss/global-variables";
+
 .article {
   margin: 0;
-  color: white;
+  color: $default-text-color;
   box-shadow: 0pt 2pt #AAAAAA;
 }
 
 .articleHeader {
-  background-color: #000066;
+  background-color: $dominant-color;
   padding: 20pt;
 }
 
