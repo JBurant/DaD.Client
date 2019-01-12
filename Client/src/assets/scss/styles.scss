@@ -5,7 +5,6 @@ body
   width: 100%;
 	font-family : Tahoma, Geneva, sans-serif;
 	color : white;
-	overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -43,7 +42,7 @@ li{
 	transition-duration : 0.6s;
 }
 
-.MenuButton:hover {
+button:hover {
   background-color: $complementary-color;
   color: white;
 }

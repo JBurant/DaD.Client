@@ -4,4 +4,36 @@
 {
   background-color: $sub-dominant-color;
   padding: 20pt;
+  width: 90%;
+  overflow: hidden;
+}
+
+.leftColumn
+{
+  float: left;
+  width: 70%;
+}
+
+.rightColumn
+{
+  float: right;
+  width: 30%;
+}
+
+ul
+{
+  padding-left: 20pt;
+}
+
+.fileTypeSelectionItem
+{
+  padding: 0pt;
+  margin: 0pt;
+}
+
+.editorTextArea
+{
+  width: 80%;
+  height: 300pt;
+  resize: none;
 }

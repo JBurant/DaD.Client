@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'button-selection',
@@ -8,5 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ButtonSelection {
-   @Input() name: string;
 }

@@ -10,6 +10,7 @@ import { FeedModule } from './modules/feed/feed.module';
 import { ArchiveModule } from './modules/archive/archive.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SharedModule } from './shared/shared.module';
     ArchiveModule,
     CoreModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

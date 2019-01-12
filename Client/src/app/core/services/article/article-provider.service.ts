@@ -1,5 +1,5 @@
 import { ArticleModel } from './article-model.service';
-import { Backend } from '../backend/backend.service';
+import { ArticleBackendService } from '../backend/article-backend.service';
 import { Injectable } from '@angular/core';
 import { ArticleHeader } from './article-header.service';
 
@@ -8,7 +8,7 @@ export class ArticleProvider {
   private articles: ArticleModel[] = [];
 
   constructor(
-    //private backend: Backend,
+    //private backend: ArticleBackendService,
   ) { }
 
   getArticles() {

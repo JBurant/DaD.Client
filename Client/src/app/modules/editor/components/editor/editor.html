@@ -1,14 +1,35 @@
 <div class="editor">
-  <div>
-    <label>Title</label>
+  <div class="leftColumn">
+    <div>
+      <h3>Title</h3>
+    </div>
+    <div>
+      <input />
+    </div>
+    <div>
+      <h3>Content</h3>
+    </div>
+    <div>
+      <textarea class="editorTextArea"></textarea>
+    </div>
+    <button-selection [name]="'Send file'"></button-selection>
   </div>
-  <div>
-    <input />
-  </div>
-  <div>
-    <label>Content</label>
-  </div>
-  <div>
-    <textarea>Type here...</textarea>
+
+  <div class="rightColumn">
+    <button-selection (click)="onUploadFile()" [name]="'Upload existing file'">Test</button-selection>
+    
+<div *ngIf="this.IsUploadVisible">
+  <hr/>
+    <ul>
+      <li class="fileTypeSelectionItem">
+        <button-selection class="fileTypeSelectionItem" [name]="'Text file .txt'"></button-selection>
+      </li>
+      <li class="fileTypeSelectionItem">
+        <button-selection class="fileTypeSelectionItem" [name]="'Image file .jpg'">Test</button-selection>
+      </li>
+    </ul>
   </div>
 </div>
+</div>
+
+
