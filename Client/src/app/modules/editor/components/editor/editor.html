@@ -4,19 +4,19 @@
       <h3>Title</h3>
     </div>
     <div>
-      <input />
+      <input [(ngModel)]="fileName"/>
     </div>
     <div>
       <h3>Content</h3>
     </div>
     <div>
-      <textarea class="editorTextArea"></textarea>
+      <textarea class="editorTextArea" [(ngModel)]="fileContent"></textarea>
     </div>
-    <button-selection [name]="'Send file'"></button-selection>
+    <button-selection [name]="'Send file'" (click)="onSendFile()"></button-selection>
   </div>
 
   <div class="rightColumn">
-    <button-selection (click)="onUploadFile()" [name]="'Upload existing file'">Test</button-selection>
+    <button-selection [name]="'Upload existing file'" (click)="onUploadFile()" >Test</button-selection>
     
 <div *ngIf="this.IsUploadVisible">
   <hr/>

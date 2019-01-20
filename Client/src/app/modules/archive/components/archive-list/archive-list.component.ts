@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { ArticleProvider } from '../../../../core/services/article/article-provider.service';
-import { ArticleHeader } from '../../../../core/services/article/article-header.service';
+import { BackendService } from 'src/app/core/services/backend/backend.service';
+import { ArticleHeader } from 'src/app/core/services/article/models/article-header.model';
+import { ArticleHeaderServer } from 'src/app/core/services/article/models/article-header-server.model';
+import { serverArticleHeaderMapper } from 'src/app/core/services/article/mappers/article-header.mapper';
+
+const configServerUrl: string = 'https://dad-server.azurewebsites.net';
+const getAllArticlesUrl: string = '/Articles/All';
 
 @Component({
   selector: 'archive-list',
@@ -8,11 +13,18 @@ import { ArticleHeader } from '../../../../core/services/article/article-header.
   styleUrls: ['./archive-list.scss']
 })
 export class ArchiveList {
-  private articles: ArticleHeader[];
-  private articleProvider: ArticleProvider;
+  public articles: ArticleHeader[] = [];
+  public serverHeaders: ArticleHeaderServer[] = [];
 
-  constructor() {
-    this.articleProvider = new ArticleProvider();
-    this.articles = this.articleProvider.getListOfArticles();
+  constructor(private backend: BackendService) {
+    this.getListOfArticles();
+  }
+
+  getListOfArticles() {
+    let headers: ArticleHeader[] = [];
+    this.backend.get(configServerUrl + getAllArticlesUrl)
+    .subscribe(response  => 
+      this.serverHeaders = JSON.parse(response.message).forEach(header => this.articles.push(serverArticleHeaderMapper(header)))
+    );
   }
 }

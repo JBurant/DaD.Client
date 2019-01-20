@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ArticleHeader } from 'src/app/core/services/article/article-header.service';
+import { ArticleHeader } from 'src/app/core/services/article/models/article-header.model';
 
 @Component({
   selector: 'article-info',

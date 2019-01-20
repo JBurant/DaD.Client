@@ -1,8 +1,8 @@
-import { ArticleHeader } from './article-header.service'
+import { ArticleHeader } from './article-header.model'
 
 export class ArticleModel {
-  private header: ArticleHeader;
-  private content: string;
+  public header: ArticleHeader;
+  public content: string;
 
   constructor(
     header: ArticleHeader,
