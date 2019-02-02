@@ -28,16 +28,12 @@ export class FeedList {
   }
 
   getAllArticles(){
-    let headers: ArticleHeaderServer[];
-
- 
     this.backend.get(configServerUrl + getAllArticlesUrl)    
     .subscribe(
       response => {
-        JSON.parse(response.message).forEach(header => this.parsedHeaders.push(serverArticleHeaderMapper(header)));
-        this.parsedHeaders.forEach(header => this.getArticle(header.name));
+        JSON.parse(response.message).forEach(header => this.getArticle(serverArticleHeaderMapper(header).name));
       }
-      );
+    );
   }
 
   getArticle(articleName: string) {
@@ -47,6 +43,6 @@ export class FeedList {
         console.log(response);
         this.articleModels.push(serverArticleModelMapper(JSON.parse(response.message)));
       }
-        ); 
+    ); 
   }
 }
