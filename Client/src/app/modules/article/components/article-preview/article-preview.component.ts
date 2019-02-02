@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ArticleModel } from 'src/app/core/services/article/models/article.model'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'article-preview',

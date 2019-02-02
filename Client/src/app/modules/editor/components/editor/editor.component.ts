@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BackendService } from 'src/app/core/services/backend/backend.service';
 import { ArticleModel } from 'src/app/core/services/article/models/article.model';
-import { ArticleHeader } from '../../../../core/services/article/models/article-header.model';
+import { articleModelServerMapper } from 'src/app/core/services/article/mappers/article-model.mapper';
+import { ArticleModelServer } from '../../../../core/services/article/models/article-server.model';
 
 const configServerUrl: string = 'https://dad-server.azurewebsites.net';
 const articlesUrl = '/Articles';
@@ -28,8 +29,8 @@ export class Editor {
 
   onSendFile()
   {
-    let articleModel: ArticleModel  = new ArticleModel({name: this.fileName, author: "TestAuthor", timeCreated: new Date(Date.now()), timeModified: new Date(Date.now())},  this.fileContent);
-    this.backend.post<ArticleModel>(configServerUrl + articlesUrl + "?Overwrite=false", articleModel)
+    let articleModel: ArticleModel  = {header: {name: this.fileName, author: "TestAuthor", timeCreated: new Date(Date.now()), timeModified: new Date(Date.now())}, content: this.fileContent};
+    this.backend.post<ArticleModelServer>(configServerUrl + articlesUrl + "?Overwrite=true", articleModelServerMapper(articleModel))
     .subscribe(response => 
       {        
         console.log(response);

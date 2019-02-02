@@ -1,4 +1,4 @@
-import { ErrorModel } from "./error-model.service";
+import { ErrorModel } from "./error.model";
 
 export class ServerResponseModel {
     public errors: ErrorModel[];

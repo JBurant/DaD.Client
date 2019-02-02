@@ -17,14 +17,15 @@ export class ArchiveList {
   public serverHeaders: ArticleHeaderServer[] = [];
 
   constructor(private backend: BackendService) {
-    this.getListOfArticles();
+    this.articles = this.getListOfArticles();
   }
 
-  getListOfArticles() {
+  getListOfArticles():  ArticleHeader[]{
     let headers: ArticleHeader[] = [];
     this.backend.get(configServerUrl + getAllArticlesUrl)
-    .subscribe(response  => 
-      this.serverHeaders = JSON.parse(response.message).forEach(header => this.articles.push(serverArticleHeaderMapper(header)))
-    );
+    .subscribe(response  => {
+      JSON.parse(response.message).forEach(header => headers.push(serverArticleHeaderMapper(header)));
+    });
+    return headers;
   }
 }
