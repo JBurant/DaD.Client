@@ -3,8 +3,6 @@ import { ArticleModel } from 'src/app/core/services/article/models/article.model
 import { serverArticleModelMapper } from 'src/app/core/services/article/mappers/article-model.mapper';
 import { serverArticleHeaderMapper } from 'src/app/core/services/article/mappers/article-header.mapper';
 import { BackendService } from 'src/app/core/services/backend/backend.service';
-import { ArticleHeader } from 'src/app/core/services/article/models/article-header.model';
-import { ArticleHeaderServer } from 'src/app/core/services/article/models/article-header-server.model';
 
 const configServerUrl: string = 'https://dad-server.azurewebsites.net';
 const getAllArticlesUrl: string = '/Articles/All';
@@ -17,10 +15,7 @@ const articlesUrl: string = '/Articles';
 })
 
 export class FeedList {
-  private articleModels: ArticleModel[];
-  private message: string;
-  private serverHeaders: ArticleHeaderServer[] = [];
-  private parsedHeaders: ArticleHeader[] = [];
+  public articleModels: ArticleModel[];
   
   constructor(private backend: BackendService) {
     this.getAllArticles();
