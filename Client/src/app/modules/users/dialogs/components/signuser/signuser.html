@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>{{dialogName}}</h2>
+
+<mat-dialog-content>
+    <div *ngIf='!IsSignUp()'>
+        <div>
+            <mat-form-field >
+                <mat-label>Username</mat-label>
+                <input matNativeControl name="username" [(ngModel)]="username">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <mat-label>Password</mat-label>
+                <input matNativeControl name="password" type="password" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-flat-button (click)='OnCloseSignIn()'>OK</button>
+            <a mat-flat-button (click)='OnSignUp()'>No account yet?</a>
+        </div>
+    </div>
+    <div *ngIf='IsSignUp()'>
+        <div>
+            <mat-form-field >
+                <mat-label>Username</mat-label>
+                <input matNativeControl name="username" [(ngModel)]="username">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <mat-label>Password</mat-label>
+                <input matNativeControl name="password" type="password" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                    <mat-label>Repeat Password</mat-label>
+                    <input matNativeControl name="repeatPassword" type="password">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <mat-label>Email for password reset</mat-label>
+                <input matNativeControl name="email" type="email" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-flat-button (click)='OnCloseSignUp()'>OK</button>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<!--
+
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>
+-->

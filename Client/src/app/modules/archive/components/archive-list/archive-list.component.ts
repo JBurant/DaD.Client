@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BackendService } from 'src/app/core/services/backend/backend.service';
+import { BackendService } from 'src/app/core/services/backend/api/backend.service';
 import { ArticleHeader } from 'src/app/core/services/article/models/article-header.model';
 import { ArticleHeaderServer } from 'src/app/core/services/article/models/article-header-server.model';
 import { serverArticleHeaderMapper } from 'src/app/core/services/article/mappers/article-header.mapper';

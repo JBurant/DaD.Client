@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ArchiveList } from './components/archive-list/archive-list.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { ArticleModule } from 'src/app/modules/article/article.module';
-import { BackendService } from 'src/app/core/services/backend/backend.service';
+import { BackendService } from 'src/app/core/services/backend/api/backend.service';
 
 @NgModule({
   declarations: [ArchiveList],

@@ -1,13 +1,15 @@
 <div>
   <nav class="UpperBar">
-    <label>
-      Logo
-    </label>
-    <label>
-      Lonely Fort
-    </label>
+      <label class="UpperBarLeft">
+        Logo
+      </label>
+      <label class="UpperBarLeft">
+        Lonely Fort
+      </label>
+      <button class="UpperBarButton"  *ngIf="IsPreferenceButtonShown()" (click)="OnPreferenceClick()">X</button>
+      <button class="UpperBarButton" (click)="OnSignClick()">{{signAction}}</button>
   </nav>
-
+ 
   <nav>
     <button class="MenuButton" routerLink= "feed-list">Feed</button>
     <!--

@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { ArticleModel } from 'src/app/core/services/article/models/article.model';
 import { serverArticleModelMapper } from 'src/app/core/services/article/mappers/article-model.mapper';
 import { serverArticleHeaderMapper } from 'src/app/core/services/article/mappers/article-header.mapper';
-import { BackendService } from 'src/app/core/services/backend/backend.service';
+import { BackendService } from 'src/app/core/services/backend/api/backend.service';
 
 const configServerUrl: string = 'https://dad-server.azurewebsites.net';
 const getAllArticlesUrl: string = '/Articles/All';

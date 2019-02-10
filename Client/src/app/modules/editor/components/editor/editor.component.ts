@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BackendService } from 'src/app/core/services/backend/backend.service';
+import { BackendService } from 'src/app/core/services/backend/api/backend.service';
 import { ArticleModel } from 'src/app/core/services/article/models/article.model';
 import { articleModelServerMapper } from 'src/app/core/services/article/mappers/article-model.mapper';
 import { ArticleModelServer } from '../../../../core/services/article/models/article-server.model';
