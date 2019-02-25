@@ -10,7 +10,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 
 export class AppComponent {
   title = 'client';
-  private signAction: string;
+  public signAction: string;
   private isPreferenceButtonShown: boolean;
   
   constructor(public dialog: MatDialog) 
