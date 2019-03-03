@@ -3,58 +3,68 @@
 <mat-dialog-content>
     <div *ngIf='!IsSignUp()'>
         <div>
-            <mat-form-field >
+            <mat-form-field>
                 <mat-label>Username</mat-label>
-                <input matNativeControl name="username" [(ngModel)]="username">
+                <input matNativeControl name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
             </mat-form-field>
+            <mat-error *ngIf="usernameFormControl.hasError('required')">Username is required</mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('minlength')">Username too short</mat-error>
+            <mat-error *ngIf="usernameFormControl.hasError('maxlength')">Username too long</mat-error>
         </div>
         <div>
             <mat-form-field >
                 <mat-label>Password</mat-label>
-                <input matNativeControl name="password" type="password" [(ngModel)]="password">
+                <input matNativeControl name="password" type="password" [(ngModel)]="password" [formControl]="passwordFormControl">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('minlength')">Password too short</mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('maxlength')">Password too long</mat-error>
             </mat-form-field>
         </div>
         <div>
-            <button mat-flat-button (click)='OnCloseSignIn()'>OK</button>
-            <a mat-flat-button (click)='OnSignUp()'>No account yet?</a>
+            <button mat-flat-button (click)="OnCloseSignIn()" [disabled]="IsSignInDisabled()">OK</button>
+            <a mat-flat-button (click)="OnSignUp()">No account yet?</a>
         </div>
     </div>
     <div *ngIf='IsSignUp()'>
         <div>
             <mat-form-field >
                 <mat-label>Username</mat-label>
-                <input matNativeControl name="username" [(ngModel)]="username">
+                <input matNativeControl name="username" [(ngModel)]="username" [formControl]="usernameFormControl">
+                <mat-error *ngIf="usernameFormControl.hasError('required')">Username is required</mat-error>
+                <mat-error *ngIf="usernameFormControl.hasError('minlength')">Username too short</mat-error>
+                <mat-error *ngIf="usernameFormControl.hasError('maxlength')">Username too long</mat-error>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
                 <mat-label>Password</mat-label>
-                <input matNativeControl name="password" type="password" [(ngModel)]="password">
+                <input matNativeControl name="password" type="password" [(ngModel)]="password" [formControl]="passwordFormControl">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('minlength')">Password too short</mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('maxlength')">Password too long</mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('passwordMatch')">Passwords have to match</mat-error>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
                     <mat-label>Repeat Password</mat-label>
-                    <input matNativeControl name="repeatPassword" type="password">
+                    <input matNativeControl name="repeatPassword" type="password" [(ngModel)]="repeatPassword" [formControl]="repeatPasswordFormControl">
+                    <mat-error *ngIf="repeatPasswordFormControl.hasError('required')">Password is required</mat-error>
+                    <mat-error *ngIf="repeatPasswordFormControl.hasError('minlength')">Password too short</mat-error>
+                    <mat-error *ngIf="repeatPasswordFormControl.hasError('maxlength')">Password too long</mat-error>
+                    <mat-error *ngIf="repeatPasswordFormControl.hasError('passwordMatch')">Passwords have to match</mat-error>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field >
                 <mat-label>Email for password reset</mat-label>
-                <input matNativeControl name="email" type="email" [(ngModel)]="email">
+                <input matNativeControl name="email" type="email" [(ngModel)]="email" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('email')">Enter correct email</mat-error>
             </mat-form-field>
         </div>
         <div>
-            <button mat-flat-button (click)='OnCloseSignUp()'>OK</button>
+            <button mat-flat-button (click)="OnCloseSignUp()" [disabled]="IsSignUpDisabled()">OK</button>
         </div>
     </div>
 </mat-dialog-content>
-
-<!--
-
-
-<mat-dialog-actions>
-    <button class="mat-raised-button"(click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
-</mat-dialog-actions>
--->

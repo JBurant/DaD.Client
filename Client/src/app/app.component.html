@@ -6,8 +6,8 @@
       <label class="UpperBarLeft">
         Lonely Fort
       </label>
-      <button class="UpperBarButton"  *ngIf="IsPreferenceButtonShown()" (click)="OnPreferenceClick()">X</button>
       <button class="UpperBarButton" (click)="OnSignClick()">{{signAction}}</button>
+      <button class="UpperBarButton"  *ngIf="IsPreferenceButtonShown()" (click)="OnPreferenceClick()">X</button>
   </nav>
  
   <nav>

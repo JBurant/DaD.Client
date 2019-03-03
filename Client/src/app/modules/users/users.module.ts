@@ -3,8 +3,9 @@ import { AppComponent } from 'src/app/app.component';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule } from "@angular/material";
 import { SignUser } from './dialogs/components/signuser/signuser.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BackendService } from 'src/app/core/services/backend/api/backend.service';
+import { AuthenticationService } from 'src/app/core/services/backend/authentication/authentication.service';
 
 @NgModule({
   declarations: [SignUser],
@@ -15,8 +16,12 @@ import { BackendService } from 'src/app/core/services/backend/api/backend.servic
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule],
-  providers: [BackendService],
+  providers: [
+    BackendService,
+    AuthenticationService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [SignUser],
 })
