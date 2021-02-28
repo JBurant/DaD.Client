@@ -15,7 +15,7 @@ const signInUp = 'Sign In/Sign Up'
 export class AppComponent {
   public title = 'client';
   public $signAction: Observable<string>;
-  private signAction: string;
+  public signAction: string;
   private isPreferenceButtonShown: boolean;
   
   constructor(public dialog: MatDialog) 
